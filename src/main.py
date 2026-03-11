@@ -9,11 +9,12 @@ static_path = "./static"
 docs_path = "./docs" 
 dir_path_content = "./content"
 template_path = "./template.html"
+default_basepath = "/"
 
 def main():
-  basepath = sys.argv[0]
-  if not basepath:
-    basepath = '/'
+  bbasepath = default_basepath
+  if len(sys.argv) > 1:
+      basepath = sys.argv[1]
   
 
   replace_dir(static_path, docs_path)
